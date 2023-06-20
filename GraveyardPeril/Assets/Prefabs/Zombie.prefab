@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2265846963527123460}
   - component: {fileID: -5612210896483300405}
   - component: {fileID: 26898267484141442}
+  - component: {fileID: 2062023805342049784}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Untagged
@@ -32,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2265846963527123460
 SpriteRenderer:
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 1219786971, guid: 2779c376376714243be5727606bfeab3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -98,10 +99,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e45f58bedce77f44b8ddc4d7edca419, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 8
+  enemyState: 0
   health: 10
   damage: 1
   speed: 0.5
   attackRate: 1
+  viewDistance: 1
 --- !u!61 &26898267484141442
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -147,3 +153,30 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75, y: 1.6875}
   m_EdgeRadius: 0
+--- !u!50 &2062023805342049784
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2378625620946204465}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
