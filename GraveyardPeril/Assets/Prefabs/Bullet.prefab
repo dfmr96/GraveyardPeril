@@ -99,7 +99,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveDir: {x: 0, y: 0, z: 0}
-  speed: 10
+  speed: 20
+  damage: 2
 --- !u!58 &8042530051638478872
 CircleCollider2D:
   m_ObjectHideFlags: 0

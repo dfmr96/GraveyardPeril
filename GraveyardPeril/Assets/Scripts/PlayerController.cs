@@ -11,11 +11,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject weapon;
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform spawnPoint;
+    [SerializeField] float fireRateTimer = 0;
     private void Update()
     {
+        fireRateTimer += Time.deltaTime;
+        
         Aim();
-
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && CanShoot())
         {
             Shoot();
         }
@@ -25,6 +27,7 @@ public class PlayerController : MonoBehaviour
     {
         GameObject bullet = Instantiate(bulletPrefab, spawnPoint.position, Quaternion.identity);
         Vector3 bulletDir = (reticle.transform.position - transform.position).normalized;
+        bullet.GetComponent<Bullet>().damage = GetComponent<PlayerStats>().currentWeapon.damage;
         bullet.GetComponent<Bullet>().SetDirection(bulletDir);
     }
 
@@ -51,5 +54,19 @@ public class PlayerController : MonoBehaviour
             scale.y = 1;
         }
         weapon.transform.localScale = scale;
+    }
+
+    public bool CanShoot()
+    {
+        Weapon weapon = GetComponent<PlayerStats>().currentWeapon;
+        if (fireRateTimer > 1 / weapon.fireRate)
+        {
+            fireRateTimer = 0;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

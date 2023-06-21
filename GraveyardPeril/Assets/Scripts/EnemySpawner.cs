@@ -8,6 +8,11 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] GameObject[] spawnSlots;
     [SerializeField] float spawnRate;
     [SerializeField] float spawnCounter;
+
+    private void Start()
+    {
+        SpawnEnemy();
+    }
     private void Update()
     {
         spawnCounter += Time.deltaTime;
@@ -15,13 +20,13 @@ public class EnemySpawner : MonoBehaviour
         if (spawnCounter > 1 / spawnRate)
         {
             SpawnEnemy();
-            spawnCounter = 0;
         }
     }
 
     [ContextMenu("SpawnEnemy")]
     private void SpawnEnemy()
     {
+        spawnCounter = 0;
         int randomSlot = Random.Range(0, spawnSlots.Length);
         BoxCollider2D slotCol = spawnSlots[randomSlot].GetComponent<BoxCollider2D>();
         BoxCollider2D enemyCol = enemyPrefab.GetComponent<BoxCollider2D>();

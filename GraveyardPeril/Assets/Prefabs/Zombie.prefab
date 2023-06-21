@@ -103,10 +103,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   enemyState: 0
-  health: 10
+  health: 2
   damage: 1
-  speed: 0.5
+  speed: 3
+  target: {fileID: 0}
   attackRate: 1
+  attackTimer: 0
   viewDistance: 1
 --- !u!61 &26898267484141442
 BoxCollider2D:

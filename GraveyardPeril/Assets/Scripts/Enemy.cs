@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] LayerMask layerMask;
     [SerializeField] EnemyState enemyState;
-    [SerializeField] int health;
+    [SerializeField] float health;
     [SerializeField] int damage;
     [SerializeField] float speed;
     [SerializeField] GameObject target;
@@ -60,8 +60,8 @@ public class Enemy : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector3.up, viewDistance, layerMask);
         if (hit.collider != null)
         {
-            Debug.Log(hit.distance);
-            Debug.Log("Chocó con: " + hit.collider.gameObject.name);
+            //Debug.Log(hit.distance);
+            //Debug.Log("Chocó con: " + hit.collider.gameObject.name);
             target = hit.collider.gameObject;
             enemyState = EnemyState.attacking;
         } else
@@ -74,6 +74,16 @@ public class Enemy : MonoBehaviour
     public void SetPosition(Vector3 pos)
     {
         transform.position = pos;
+    }
+
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+
+        if (health < 1)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnDrawGizmos()
