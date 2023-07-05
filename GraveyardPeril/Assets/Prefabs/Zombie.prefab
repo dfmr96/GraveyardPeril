@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2265846963527123460
 SpriteRenderer:
@@ -55,7 +55,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -103,11 +103,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   enemyState: 0
-  health: 2
-  damage: 1
-  speed: 3
+  health: 1
+  damage: 3
+  speed: 1
   target: {fileID: 0}
-  attackRate: 1
+  attackRate: 2
   attackTimer: 0
   viewDistance: 1
 --- !u!61 &26898267484141442

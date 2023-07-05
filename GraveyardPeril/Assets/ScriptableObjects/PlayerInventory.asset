@@ -9,11 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8e0359f1d5ec234785abdcf5f0ba7d9, type: 3}
-  m_Name: Pistol
+  m_Script: {fileID: 11500000, guid: c445bcfcb4975aa48b5149b568fb88c3, type: 3}
+  m_Name: PlayerInventory
   m_EditorClassIdentifier: 
-  damage: 2
-  fireRate: 1
-  magazineSize: 15
-  maxAmmo: 100
-  sprite: {fileID: 1772238234, guid: 7635e8564a0f988499ca6665f8926d53, type: 3}
+  slots:
+  - weaponData: {fileID: 11400000, guid: 26b7a8a0993eae24d84ec8b1fa785d05, type: 2}
+    ammoInMagazine: 0
+    magazineSize: 0
+    totalAmmo: 0
+    maxAmmo: 0

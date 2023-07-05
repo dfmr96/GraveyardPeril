@@ -10,10 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8e0359f1d5ec234785abdcf5f0ba7d9, type: 3}
-  m_Name: Shotgun
+  m_Name: Pistol
   m_EditorClassIdentifier: 
-  damage: 6
-  fireRate: 0.33
-  magazineSize: 7
-  maxAmmo: 30
-  sprite: {fileID: -1316197077, guid: 7635e8564a0f988499ca6665f8926d53, type: 3}
+  weaponName: Handgun
+  damage: 2
+  fireRate: 2
+  magazineSize: 8
+  maxAmmo: 160
+  sprite: {fileID: 1772238234, guid: 7635e8564a0f988499ca6665f8926d53, type: 3}
+  weaponFireMode: 0
+  weaponPrefab: {fileID: 6834739251896627983, guid: 874a4a754b96cec47a8684c50c62d2bc, type: 3}
