@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -17,9 +18,20 @@ public class Enemy : MonoBehaviour
     [SerializeField] float attackTimer;
     [SerializeField] float viewDistance;
 
+
     private void Start()
     {
         enemyState = EnemyState.moving;
+    }
+
+    private void OnEnable()
+    {
+        GameManager.instance.EnemySpawn();
+    }
+
+    private void OnDisable()
+    {
+        GameManager.instance.EnemyDestroyed();
     }
 
     private void Update()

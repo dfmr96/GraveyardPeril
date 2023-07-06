@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Shotgun
   damage: 6
-  fireRate: 0.66
+  fireRate: 1.1
   magazineSize: 7
   maxAmmo: 30
   sprite: {fileID: -1316197077, guid: 7635e8564a0f988499ca6665f8926d53, type: 3}

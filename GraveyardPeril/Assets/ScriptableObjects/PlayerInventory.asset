@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slots:
   - weaponData: {fileID: 11400000, guid: 26b7a8a0993eae24d84ec8b1fa785d05, type: 2}
-    ammoInMagazine: 0
-    magazineSize: 0
-    totalAmmo: 0
-    maxAmmo: 0
+    ammoInMagazine: 7
+    magazineSize: 8
+    totalAmmo: 104
+    maxAmmo: 160
