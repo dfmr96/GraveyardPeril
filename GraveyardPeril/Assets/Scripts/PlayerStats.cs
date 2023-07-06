@@ -19,5 +19,10 @@ public class PlayerStats : MonoBehaviour
     {
         health -= damage;
         OnPlayerDamaged?.Invoke(damage);
+
+        if (health < 0)
+        {
+            GameManager.instance.GameOver();
+        }
     }
 }

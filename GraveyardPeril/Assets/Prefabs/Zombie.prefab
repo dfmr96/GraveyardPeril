@@ -110,6 +110,7 @@ MonoBehaviour:
   attackRate: 2
   attackTimer: 0
   viewDistance: 1
+  moneyReward: 5
 --- !u!61 &26898267484141442
 BoxCollider2D:
   m_ObjectHideFlags: 0

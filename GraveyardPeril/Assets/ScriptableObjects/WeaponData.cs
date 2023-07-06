@@ -20,5 +20,5 @@ public class WeaponData : ScriptableObject
     public Sprite sprite;
     public WeaponFireMode weaponFireMode;
     public GameObject weaponPrefab;
-
+    public int weaponRange;
 }

@@ -12,10 +12,11 @@ public class PlayerInventory : MonoBehaviour
     public static Action<Inventory.InventorySlot> OnWeaponEquipped;
     public PlayerController playerController;
     public WeaponData handgun;
+    public CircleCollider2D weaponRange;
     private void Start()
     {
         inventory.slots.Clear();
-        inventory.slots.Add(new Inventory.InventorySlot(handgun, handgun.magazineSize, handgun.magazineSize, handgun.maxAmmo, handgun.maxAmmo));
+        inventory.slots.Add(new Inventory.InventorySlot(handgun));
         EquipWeapon(inventory.slots[0]);
     }
 
@@ -35,5 +36,6 @@ public class PlayerInventory : MonoBehaviour
         }
         currentWeapon = Instantiate(currentWeaponSlot.weaponData.weaponPrefab, weaponParent.transform);
         playerController.SetWeapon(currentWeaponSlot.weaponData, currentWeapon);
+        weaponRange.radius = currentWeaponSlot.weaponRange;
     }
 }

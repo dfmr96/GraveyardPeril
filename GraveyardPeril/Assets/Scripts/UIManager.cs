@@ -1,7 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using TMPro.EditorUtilities;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +10,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] PlayerStats playerStats;
     [SerializeField] GameObject wavePanel;
     [SerializeField] TMP_Text waveText;
+    [SerializeField] TMP_Text money;
     private void Start()
     {
         if (sharedInstance != null)
@@ -24,6 +23,7 @@ public class UIManager : MonoBehaviour
 
         SetHealth();
         wavePanel.SetActive(false);
+        money.SetText("0");
     }
 
     private void OnEnable()
@@ -56,6 +56,11 @@ public class UIManager : MonoBehaviour
     public void UpdateWaveText(int wave)
     {
         StartCoroutine(WaveBegin(wave));
+    }
+
+    public void UpdateMoney(int reward)
+    {
+        money.SetText($"{reward}");
     }
 
     public IEnumerator WaveBegin(int wave)

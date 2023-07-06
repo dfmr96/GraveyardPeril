@@ -15,14 +15,15 @@ public class Inventory : ScriptableObject
         public float magazineSize;
         public float totalAmmo;
         public float maxAmmo;
-
-        public InventorySlot(WeaponData weaponData, float ammoInMagazine, float magazineSize, float totalAmmo, float maxAmmo)
+        public int weaponRange;
+        public InventorySlot(WeaponData weaponData)
         {
             this.weaponData = weaponData;
-            this.ammoInMagazine = ammoInMagazine;
-            this.magazineSize = magazineSize;
-            this.totalAmmo = totalAmmo;
-            this.maxAmmo = maxAmmo;
+            this.ammoInMagazine = weaponData.magazineSize;
+            this.magazineSize = weaponData.magazineSize;
+            this.totalAmmo = weaponData.maxAmmo;
+            this.maxAmmo = weaponData.maxAmmo;
+            this.weaponRange = weaponData.weaponRange;
         }
     }
     public List<InventorySlot> slots;

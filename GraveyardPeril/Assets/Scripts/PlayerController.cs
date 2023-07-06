@@ -114,10 +114,20 @@ public class PlayerController : MonoBehaviour
 
     public IEnumerator ReloadCO()
     {
-        yield return new WaitForSeconds(2f);
-        playerInventory.currentWeaponSlot.ammoInMagazine = playerInventory.currentWeaponSlot.magazineSize;
-        playerInventory.currentWeaponSlot.totalAmmo -= playerInventory.currentWeaponSlot.magazineSize;
-        UIAmmoController.OnAmmoValueChanged?.Invoke(playerInventory.currentWeaponSlot);
+
+        if (playerInventory.currentWeaponSlot.totalAmmo >= playerInventory.currentWeaponSlot.magazineSize)
+        {
+            yield return new WaitForSeconds(2f);
+            playerInventory.currentWeaponSlot.ammoInMagazine = playerInventory.currentWeaponSlot.magazineSize;
+            playerInventory.currentWeaponSlot.totalAmmo -= playerInventory.currentWeaponSlot.magazineSize;
+            UIAmmoController.OnAmmoValueChanged?.Invoke(playerInventory.currentWeaponSlot);
+        } else if (playerInventory.currentWeaponSlot.totalAmmo < playerInventory.currentWeaponSlot.magazineSize)
+        {
+            yield return new WaitForSeconds(2f);
+            playerInventory.currentWeaponSlot.ammoInMagazine = playerInventory.currentWeaponSlot.totalAmmo;
+            playerInventory.currentWeaponSlot.totalAmmo = 0;
+            UIAmmoController.OnAmmoValueChanged?.Invoke(playerInventory.currentWeaponSlot);
+        }
         isRealoading = false;
     }
 

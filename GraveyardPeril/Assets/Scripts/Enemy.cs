@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] float attackRate;
     [SerializeField] float attackTimer;
     [SerializeField] float viewDistance;
+    [SerializeField] int moneyReward;
 
 
     private void Start()
@@ -94,6 +95,7 @@ public class Enemy : MonoBehaviour
 
         if (health < 1)
         {
+            GameManager.instance.AddMoney(moneyReward);
             Destroy(gameObject);
         }
     }

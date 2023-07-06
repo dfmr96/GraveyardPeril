@@ -14,7 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slots:
   - weaponData: {fileID: 11400000, guid: 26b7a8a0993eae24d84ec8b1fa785d05, type: 2}
-    ammoInMagazine: 7
+    ammoInMagazine: 5
     magazineSize: 8
-    totalAmmo: 104
+    totalAmmo: 112
     maxAmmo: 160
+    weaponRange: 9
+  - weaponData: {fileID: 11400000, guid: b02624dd2e9ee734b93e57eb17f52a08, type: 2}
+    ammoInMagazine: 6
+    magazineSize: 7
+    totalAmmo: 23
+    maxAmmo: 30
+    weaponRange: 5
+  - weaponData: {fileID: 11400000, guid: 24afc981d2cf5e441b37c94967823a6d, type: 2}
+    ammoInMagazine: 30
+    magazineSize: 30
+    totalAmmo: 50
+    maxAmmo: 200
+    weaponRange: 14

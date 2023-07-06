@@ -20,3 +20,4 @@ MonoBehaviour:
   sprite: {fileID: -1180725821, guid: 7635e8564a0f988499ca6665f8926d53, type: 3}
   weaponFireMode: 1
   weaponPrefab: {fileID: 7749650746956329482, guid: cfac75038b4ae754aafc0648009f1eba, type: 3}
+  weaponRange: 14
